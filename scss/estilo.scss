@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@500&display=swap');
+
+$color-1: #ffde00;
+$color-2: #ff8100;
+$color-3: #e39800;
+$color-4: #ffcb60;
+$color-5: #ff9400;
+$color-6: #eca543;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif, Arial;
+}
+
+// Encabezado
+.encabezado {
+    grid-area: encabezado;
+    background-color: $color-6;
+    display: grid;
+    grid-template-areas: "logotipo menu";
+    grid-template-columns: 220px auto;
+
+    position: fixed;
+    right: 0;
+    left: 0;
+
+    .logotipo {
+        grid-area: logotipo;
+        color: $color-6;
+        background-color: white;
+        font-family: 'M PLUS 1 Code', sans-serif;
+        font-size: 28px;
+        margin: 10px;
+    }
+
+    .menu {
+        grid-area: menu;
+
+        .botones {
+            background-color: aqua;
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: stretch;
+        }
+    }
+}
+
+// Inicia Página Index.html
+.bodyIndex {
+    display: grid;
+    grid-template-areas: "encabezado"
+        "index"
+        "footer";
+    grid-template-rows: auto 700px auto;
+
+    background-image: url(/img/1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.contenidoIndex {
+    margin-top: 100px;
+    grid-area: index;
+    display: grid;
+    grid-template-areas: "titulo espacio"
+        "formulario espacio";
+    grid-template-rows: 25% auto;
+    grid-template-columns: auto auto;
+
+    .tituloIndex {
+        grid-area: titulo;
+        justify-self: center;
+        align-self: center;
+        padding: 15px;
+        color: white;
+
+        .titulo {
+            font-size: 35px;
+        }
+        .descripcion {
+            font-size: 20px;
+            span {
+                color: $color-6;
+                background-color: white;
+            }
+        }
+    }
+
+    .formulario {
+        padding: 50px;
+        display: grid;
+        grid-area: formulario;
+        justify-self: center;
+        max-height: 250px;
+        background-color: $color-6;
+        border-radius: 1rem;
+
+        .formularioTitulo {
+            font-size: 30px;
+            justify-self: center;
+            color: white;
+        }
+
+        .inicioSesion{
+            display: grid;
+
+            .form{
+                margin: 5px;
+                padding: 5px;
+                border-radius: .5rem;
+                min-width: 250px;
+            }
+
+            .formButton{
+                font-size: 17px;
+                margin: 10px;
+                border-radius: .5rem;
+                min-width: 100px;
+                justify-self: center;
+            }
+        }
+    }
+
+    .espacio {
+        grid-area: espacio;
+    }
+}
+// Termina Página Index.html
+
+// Inicia Página plataforma.html
+.bodyPlataforma{
+    display: grid;
+    grid-template-areas: "encabezado"
+        "contenidoPlataforma"
+        "footer";
+    grid-template-rows: auto 700px auto;
+}
+
+.contenidoPlataforma{
+    display: grid;
+    grid-area: contenidoPlataforma;
+    align-content: center;
+    justify-content: center;
+}
+// Termina Página plataforma.html
+
+// Pie de Página
+.pieDePagina {
+    display: grid;
+    grid-area: footer;
+    background-color: $color-6;
+    color: white;
+    height: 50px;
+    justify-content: center;
+    align-content: center;
+}

@@ -49,15 +49,15 @@ $color-6: #eca543;
 
 // Inicia Página Index.html
 .bodyIndex {
+    background-image: url(/img/1.jpg);
+    background-position: center;
+    background-size: cover;
+
     display: grid;
     grid-template-areas: "encabezado"
         "index"
         "footer";
     grid-template-rows: auto 700px auto;
-
-    background-image: url(img/1.jpg);
-    background-position: center;
-    background-size: cover;
 }
 
 .contenidoIndex {

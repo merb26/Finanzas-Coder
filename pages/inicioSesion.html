@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzas Coder</title>
+    <link rel="stylesheet" href="/scss/estilo.css">
+</head>
+
+<body class="bodyInicioSesion">
+    <div class="encabezado">
+        <div class="logotipo">Finanzas Coder</div>
+    </div>
+    <div class="contenidoInicioSesion">
+        <div class="tituloInicioSesion">
+            <div class="titulo">
+                Tus soluciones financieras en un solo lugar
+            </div>
+            <div class="descripcion">
+                En Finanzas Coder nos adaptamos a lo que tú necesitas
+            </div>
+        </div>
+        <div class="formulario">
+            <div class="formularioTitulo">
+                ¡Bienvenido!
+            </div>
+            <form action="usuarioForm" class="inicioSesion">
+                <div class="usuario">
+                    <input class="form" type="text" placeholder="Ingresa tu usuario" id="txtUsuario">
+                </div>
+                <div class="password">
+                    <input class="form" type="password" placeholder="Ingresa tu contraseña" id="txtPassword">
+                </div>
+                <div id="error" style="color: red;"></div>
+                <input class="formButton" type="button" value="Iniciar" id="btnIniciar">
+            </form>
+        </div>
+    </div>
+    <div class="pieDePagina">
+        Desarrollado por: Merb
+    </div>
+    <script src="../js/inicioSesion.js"></script>
+</body>
+
+</html>

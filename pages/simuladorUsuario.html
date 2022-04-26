@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/scss/estilo.css">
+    <title>Finanzas Coder - Préstamos</title>
+</head>
+
+<body class="bodyPlataforma">
+    <div class="encabezado">
+        <div class="logotipo">Finanzas Coder</div>
+        <div class="menu">
+            <ul class="botones">
+                <li class="boton_personalizado"><a href="inicioSesion.html">Iniciar Sesión</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="contenidoPlataforma">
+        <h2>Simulador del préstamo</h2>
+        <br><br>
+        <form>
+            <label for="dineroPedido"> ¿Cuánto dinero quieres pedir?</label>
+            <br>
+            <input type="number" id="dineroPedido">
+            <br><br>
+            <label for="numeroMeses"> ¿Cuántos meses quieres pagar?</label>
+            <br>
+            <input type="number" id="numeroMeses">
+            <br><br>
+            <input id="enviar" type="button" value="Enviar">
+        </form>
+        <div id="resultado"></div>
+    </div>
+    <div class="pieDePagina"></div>
+    <script src="/js/DOM.js"></script>
+</body>
+
+</html>

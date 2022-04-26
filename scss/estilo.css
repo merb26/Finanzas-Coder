@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif, Arial;
+}
+
+.boton {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.button {
+  --offset: 10px;
+  --border-size: 2px;
+  display: block;
+  position: relative;
+  padding: 1.5em 3em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  background: transparent;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+          box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+  -webkit-transition: background .8s ease;
+  transition: background .8s ease;
+}
+
+.button:hover {
+  background: rgba(100, 0, 0, 0.03);
+}
+
+.button__horizontal, .button__vertical {
+  position: absolute;
+  top: var(--horizontal-offset, 0);
+  right: var(--vertical-offset, 0);
+  bottom: var(--horizontal-offset, 0);
+  left: var(--vertical-offset, 0);
+  -webkit-transition: -webkit-transform .8s ease;
+  transition: -webkit-transform .8s ease;
+  transition: transform .8s ease;
+  transition: transform .8s ease, -webkit-transform .8s ease;
+  will-change: transform;
+}
+
+.button__horizontal::before, .button__vertical::before {
+  content: '';
+  position: absolute;
+  border: inherit;
+}
+
+.button__horizontal {
+  --vertical-offset: calc(var(--offset) * -1);
+  border-top: var(--border-size) solid currentcolor;
+  border-bottom: var(--border-size) solid currentcolor;
+}
+
+.button__horizontal::before {
+  top: calc(var(--vertical-offset) - var(--border-size));
+  bottom: calc(var(--vertical-offset) - var(--border-size));
+  left: calc(var(--vertical-offset) * -1);
+  right: calc(var(--vertical-offset) * -1);
+}
+
+.button:hover .button__horizontal {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.button__vertical {
+  --horizontal-offset: calc(var(--offset) * -1);
+  border-left: var(--border-size) solid currentcolor;
+  border-right: var(--border-size) solid currentcolor;
+}
+
+.button__vertical::before {
+  top: calc(var(--horizontal-offset) * -1);
+  bottom: calc(var(--horizontal-offset) * -1);
+  left: calc(var(--horizontal-offset) - var(--border-size));
+  right: calc(var(--horizontal-offset) - var(--border-size));
+}
+
+.button:hover .button__vertical {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.encabezado {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: encabezado;
+  background-color: #eca543;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "logotipo menu";
+      grid-template-columns: 220px auto;
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
+.encabezado .logotipo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logotipo;
+  color: #eca543;
+  background-color: white;
+  font-family: 'M PLUS 1 Code', sans-serif;
+  font-size: 28px;
+  margin: 10px;
+}
+
+.encabezado .menu {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: menu;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: whitesmoke;
+}
+
+.encabezado .menu .botones {
+  list-style: none;
+}
+
+.encabezado .menu .botones a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.encabezado .menu .botones a:hover {
+  color: #eca543;
+}
+
+.encabezado .menu .botones .boton_personalizado {
+  text-decoration: none;
+  padding: 5px;
+  font-weight: 400;
+  font-size: 20px;
+  background-color: #eca543;
+  border-radius: 6px;
+  border: 2px solid whitesmoke;
+}
+
+.encabezado .menu .botones .boton_personalizado:hover {
+  background-color: whitesmoke;
+}
+
+.bodyIndex {
+  background-image: url(../img/1.jpg);
+  background-position: center;
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "encabezado" "index" "footer";
+  -ms-grid-rows: auto 700px auto;
+      grid-template-rows: auto 700px auto;
+}
+
+.contenidoIndex {
+  margin-top: 100px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: index;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "titulo espacio" "boton espacio";
+      grid-template-rows: 25% auto;
+      grid-template-columns: auto auto;
+}
+
+.contenidoIndex .tituloIndex {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: titulo;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 15px;
+  color: white;
+}
+
+.contenidoIndex .tituloIndex .titulo {
+  font-size: 35px;
+}
+
+.contenidoIndex .tituloIndex .descripcion {
+  font-size: 20px;
+}
+
+.contenidoIndex .tituloIndex .descripcion span {
+  color: #eca543;
+  background-color: white;
+}
+
+.contenidoIndex .espacio {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: espacio;
+}
+
+.bodyInicioSesion {
+  background-color: #ADBAC6;
+  color: whitesmoke;
+  background-position: center;
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "encabezado" "index" "footer";
+  -ms-grid-rows: auto 700px auto;
+      grid-template-rows: auto 700px auto;
+}
+
+.contenidoInicioSesion {
+  margin-top: 100px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: index;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "titulo" "formulario";
+  -ms-grid-rows: 25%;
+      grid-template-rows: 25%;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.contenidoInicioSesion .tituloInicioSesion {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: titulo;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 15px;
+  color: white;
+}
+
+.contenidoInicioSesion .tituloInicioSesion .titulo {
+  font-size: 35px;
+}
+
+.contenidoInicioSesion .tituloInicioSesion .descripcion {
+  font-size: 20px;
+}
+
+.contenidoInicioSesion .tituloInicioSesion .descripcion span {
+  color: #eca543;
+  background-color: white;
+}
+
+.contenidoInicioSesion .formulario {
+  padding: 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: formulario;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  max-height: 210px;
+  background-color: #eca543;
+  border-radius: .5rem;
+}
+
+.contenidoInicioSesion .formulario .formularioTitulo {
+  font-size: 30px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  color: white;
+}
+
+.contenidoInicioSesion .formulario .inicioSesion {
+  display: -ms-grid;
+  display: grid;
+}
+
+.contenidoInicioSesion .formulario .inicioSesion .form {
+  margin: 5px;
+  padding: 5px;
+  border-radius: .5rem;
+  min-width: 250px;
+}
+
+.contenidoInicioSesion .formulario .inicioSesion .formButton {
+  font-size: 17px;
+  margin: 10px;
+  border-radius: .5rem;
+  min-width: 100px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.bodyPlataforma {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "encabezado" "contenidoPlataforma" "footer";
+  -ms-grid-rows: auto 700px auto;
+      grid-template-rows: auto 700px auto;
+}
+
+.contenidoPlataforma {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: contenidoPlataforma;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ADBAC6;
+  color: whitesmoke;
+}
+
+.pieDePagina {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  background-color: #eca543;
+  color: white;
+  height: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+/*# sourceMappingURL=estilo.css.map */

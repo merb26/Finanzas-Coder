@@ -16,33 +16,34 @@
     <div class="contenidoInicioSesion">
         <div class="tituloInicioSesion">
             <div class="titulo">
-                Tus soluciones financieras en un solo lugar
+                ¡Crea tu cuenta aquí para hacer finanzas!
             </div>
             <div class="descripcion">
-                En Finanzas Coder nos adaptamos a lo que tú necesitas
             </div>
         </div>
         <div class="formulario">
-            <div class="formularioTitulo">
-                ¡Bienvenido!
-            </div>
             <form action="usuarioForm" class="inicioSesion">
                 <div class="usuario">
-                    <input class="form" type="text" placeholder="Ingresa tu usuario o correo electrónico" id="txtUsuario">
+                    <input class="form" type="text" placeholder="Nombre de usuario" id="txtUsuario">
+                </div>
+                <div class="email">
+                    <input class="form" type="email" placeholder="Correo electrónico" id="txtEmail">
                 </div>
                 <div class="password">
-                    <input class="form" type="password" placeholder="Ingresa tu contraseña" id="txtPassword">
+                    <input class="form" type="password" placeholder="Contraseña" id="txtPassword">
+                </div>
+                <div class="password2">
+                    <input class="form" type="password" placeholder="Confirmar contraseña" id="txtPassword2">
                 </div>
                 <div id="error" style="color: red;"></div>
-                <input class="formButton" type="button" value="Iniciar" id="btnIniciar">
-                <div><a href="registro.html">Regístrate aqui</a></div>
+                <input class="formButton" type="button" value="Registrarme" id="btnRegistrar">
             </form>
         </div>
     </div>
     <div class="pieDePagina">
         Desarrollado por: Merb
     </div>
-    <script src="../js/inicioSesion.js"></script>
+    <script src="../js/registro.js"></script>
 </body>
 
 </html>

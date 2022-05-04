@@ -1,65 +1,61 @@
 const btnRegistrar = document.getElementById("btnRegistrar")
 
-class usuarioStorage {
-    constructor(obj) {
-        this.nombre = obj.nombre
-        this.email = obj.email
-        this.pass = obj.pass
-    }
+function error(mensaje) {
+    document.getElementById("error").innerHTML = mensaje
 }
 
-class usuario {
-    constructor(nombre, email, pass) {
-        this.nombre = nombre
-        this.email = email
-        this.pass = pass
-    }
+const linkLogotipo = document.getElementById("logotipo")
+linkLogotipo.onclick = () => {
+    window.location.href = "../index.html";
 }
 
-const almacenamientoLocal = JSON.parse(localStorage.getItem("usuarios"))
-const usuariosAlmacenados = []
-if (almacenamientoLocal !== null) {
-    // Si el localStorage solo tiene 1 registro, lo inserta al array
-    if (almacenamientoLocal.length === 1) {
-        usuariosAlmacenados.push(new usuarioStorage(almacenamientoLocal))
-    } else {
-        // el localStorage tiene más de un registro por lo tanto se usa for
-        for (const iterator of almacenamientoLocal) {
-            // Se inserta cada registro o dato al array
-            usuariosAlmacenados.push(new usuarioStorage(iterator))
-        }   
-    }
-}
+const usuariosAlmacenados = JSON.parse(localStorage.getItem("usuarios")) || []
 
 btnRegistrar.onclick = () => {
-    const nombreUsuario = document.getElementById("txtUsuario").value
-    const email = document.getElementById("txtEmail").value
-    const pass = document.getElementById("txtPassword").value
-    const passConfirmado = document.getElementById("txtPassword2").value
+    const nombreUsuario = document.getElementById("txtUsuario").value.toUpperCase()
+    const emailUsuario = document.getElementById("txtEmail").value.toUpperCase()
+    const passUsuario = document.getElementById("txtPassword").value
+    const passConfirmadoUsuario = document.getElementById("txtPassword2").value
+
     if (nombreUsuario !== "") {
-        if (email !== "") {
-            if (pass !== "") {
-                if (passConfirmado !== "") {
-
+        let seRepite = false
+        for (const iterator of usuariosAlmacenados) {
+            const {nombre} = iterator
+            if (nombre === nombreUsuario) {
+                seRepite = true
+                break;
+            }
+        }
+        if (emailUsuario !== "" && seRepite === false) {
+            seRepite = false
+            for (const iterator of usuariosAlmacenados) {
+                const {email} = iterator
+                if (email === emailUsuario) {
+                    seRepite = true
+                    break;
+                }
+            }
+            if (passUsuario !== "" && seRepite === false) {
+                if (passConfirmadoUsuario !== "") {
                     //Si todos los campos no están vacíos
-
-                    //Inserta el dato al array, que se registró el usuario
-                    usuariosAlmacenados.push(new usuario(nombreUsuario.toUpperCase(), email.toUpperCase(), pass))
-                    //Convierte el array al String dentro de la variable
-                    const usuarioJSON = JSON.stringify(usuariosAlmacenados)
-                    //Almacena en localStorage
-                    localStorage.setItem("usuarios", usuarioJSON)
-                    window.location.href = "../pages/consulta.html";
+                    if (passUsuario === passConfirmadoUsuario) {
+                        //Inserta el dato al objeto, que se registró el usuario
+                        usuariosAlmacenados.push({nombre: nombreUsuario, email: emailUsuario, pass: passUsuario})
+                        localStorage.setItem("usuarios", JSON.stringify(usuariosAlmacenados))
+                        window.location.href = "../pages/consulta.html";
+                    } else {
+                        error("Las contraseñas no coinciden")
+                    }
                 } else {
-                    alert("Debe confirmar la contraseña")
+                    error("Debe confirmar la contraseña")
                 }
             } else {
-                alert("Debe ingresar la contraseña")
+                seRepite === true ? error("El correo electrónico ya fue registrado") : error("Debe ingresar la contraseña")
             }
         } else {
-            alert("Debe ingresar email")
+            seRepite === true ? error("El nombre de usuario ya existe") : error("Debe ingresar email")
         }
     } else {
-        alert("Debe ingresar nombre de usuario")
+        error("Debe ingresar el nombre de usuario")
     }
 }

@@ -110,11 +110,18 @@ $color-6: #eca543;
 
     .logotipo {
         grid-area: logotipo;
+        border: $color-6;
         color: $color-6;
         background-color: white;
         font-family: 'M PLUS 1 Code', sans-serif;
         font-size: 28px;
         margin: 10px;
+
+        
+    }
+
+    .logotipo:hover {
+        cursor: pointer;
     }
 
     .menu {
@@ -126,7 +133,6 @@ $color-6: #eca543;
 
         .botones {
             list-style: none;
-
             a {
                 text-decoration: none;
                 color: whitesmoke;
@@ -281,25 +287,36 @@ $color-6: #eca543;
 }
 // // Termina Página Index.html
 
-// Inicia Página plataforma.html
-.bodyPlataforma {
+// Inicia Página simuladorUsuario.html
+.bodySimulador {
     display: grid;
-    grid-template-areas: "encabezado"
-        "contenidoPlataforma"
-        "footer";
+    grid-template-areas: " encabezado"
+        " contenidoSimulador"
+        " footer";
     grid-template-rows: auto 700px auto;
+
+    background-image: url(../img/2.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
-.contenidoPlataforma {
+.contenidoSimulador {
     display: grid;
-    grid-area: contenidoPlataforma;
+    grid-area: contenidoSimulador;
     align-content: center;
     justify-content: center;
-    background-color: #ADBAC6;
     color: whitesmoke;
+    
+    .formulario {
+        background-color: rgba(173, 186, 198, .8);   
+        padding: 50px;
+        .tituloSimulador {
+            font-size: 35px;
+        }
+    }
 }
 
-// Termina Página plataforma.html
+// Termina Página siumladorUsuario.html
 
 // Pie de Página
 .pieDePagina {

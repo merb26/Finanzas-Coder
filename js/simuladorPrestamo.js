@@ -11,6 +11,11 @@ function pagoMensual(pagoPorPeriodo, dineroPedido) {
     return Math.round(totalPrestamo(dineroPedido) / pagoPorPeriodo);
 }
 
+const linkLogotipo = document.getElementById("logotipo")
+linkLogotipo.onclick = () => {
+    window.location.href = "../index.html";
+}
+
 const txtDineroPedido = document.getElementById("dineroPedido");
 txtDineroPedido.addEventListener("keypress", function onEvent(event){
     if(event.key === "Enter"){

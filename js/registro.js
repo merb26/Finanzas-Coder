@@ -1,3 +1,12 @@
+
+
+Swal.fire({
+    position: 'top-end',
+    title: 'Te regalo $10,000 por ser mi cliente nuevo',
+    showConfirmButton: false,
+    timer: 3000
+  })
+
 const btnRegistrar = document.getElementById("btnRegistrar")
 
 function error(mensaje) {
@@ -42,7 +51,7 @@ btnRegistrar.onclick = () => {
                         //Inserta el dato al objeto, que se registró el usuario
                         usuariosAlmacenados.push({nombre: nombreUsuario, email: emailUsuario, pass: passUsuario})
                         localStorage.setItem("usuarios", JSON.stringify(usuariosAlmacenados))
-                        window.location.href = "../pages/consulta.html";
+                        window.location.href = "../pages/resumen.html";
                     } else {
                         error("Las contraseñas no coinciden")
                     }
@@ -59,3 +68,4 @@ btnRegistrar.onclick = () => {
         error("Debe ingresar el nombre de usuario")
     }
 }
+

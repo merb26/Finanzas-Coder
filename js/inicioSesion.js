@@ -29,7 +29,7 @@ btnIniciar.onclick = () => {
             const {nombre, email, pass} = iterator
             if ((txtUsuario === nombre || txtUsuario === email) && pass === passUsuario) {
                 isFind = true
-                window.location.href = "../pages/consulta.html";
+                window.location.href = "../pages/resumen.html";
                 break;
             }
         }

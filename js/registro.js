@@ -40,9 +40,12 @@ btnRegistrar.onclick = () => {
                     //Si todos los campos no están vacíos
                     if (passUsuario === passConfirmadoUsuario) {
                         //Inserta el dato al objeto, que se registró el usuario
-                        usuariosAlmacenados.push({nombre: nombreUsuario, email: emailUsuario, pass: passUsuario})
+                        usuariosAlmacenados.push({nombre: nombreUsuario, email: emailUsuario, pass: passUsuario, nuevoUsuario: true, dinero: 10000})
                         localStorage.setItem("usuarios", JSON.stringify(usuariosAlmacenados))
-                        window.location.href = "../pages/consulta.html";
+                        sessionStorage.setItem('usuario', nombreUsuario)
+                        sessionStorage.setItem('dineroDisponible', 10000)
+                        sessionStorage.setItem('nuevoUsuario', true)
+                        window.location.href = "../pages/resumen.html";
                     } else {
                         error("Las contraseñas no coinciden")
                     }

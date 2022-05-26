@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@500&display=swap');
 
-$color-1: #ffde00;
-$color-2: #ff8100;
-$color-3: #e39800;
-$color-4: #ffcb60;
-$color-5: #ff9400;
+$color-5: #D6771E;
 $color-6: #eca543;
 
 * {
@@ -117,7 +113,7 @@ $color-6: #eca543;
         font-size: 28px;
         margin: 10px;
 
-        
+
     }
 
     .logotipo:hover {
@@ -133,13 +129,16 @@ $color-6: #eca543;
 
         .botones {
             list-style: none;
+
             a {
                 text-decoration: none;
                 color: whitesmoke;
             }
-            a:hover{
+
+            a:hover {
                 color: $color-6;
             }
+
             .boton_personalizado {
                 text-decoration: none;
                 padding: 5px;
@@ -151,10 +150,15 @@ $color-6: #eca543;
             }
 
             .boton_personalizado:hover {
-                
                 background-color: whitesmoke;
             }
         }
+    }
+
+    .end{
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 15px;
     }
 }
 
@@ -208,7 +212,7 @@ $color-6: #eca543;
 
 // Termina Página Index.html
 
-// // Inicia Página inicioSesion.html
+// Inicia Página inicioSesion.html
 .bodyInicioSesion {
     background-color: #ADBAC6;
     color: whitesmoke;
@@ -241,8 +245,10 @@ $color-6: #eca543;
         .titulo {
             font-size: 35px;
         }
+
         .descripcion {
             font-size: 20px;
+
             span {
                 color: $color-6;
                 background-color: white;
@@ -265,17 +271,17 @@ $color-6: #eca543;
             color: white;
         }
 
-        .inicioSesion{
+        .inicioSesion {
             display: grid;
 
-            .form{
+            .form {
                 margin: 5px;
                 padding: 5px;
                 border-radius: .5rem;
                 min-width: 250px;
             }
 
-            .formButton{
+            .formButton {
                 font-size: 17px;
                 margin: 10px;
                 border-radius: .5rem;
@@ -285,7 +291,8 @@ $color-6: #eca543;
         }
     }
 }
-// // Termina Página Index.html
+
+// // Termina Página inicioSesion.html
 
 // Inicia Página simuladorUsuario.html
 .bodySimulador {
@@ -306,10 +313,11 @@ $color-6: #eca543;
     align-content: center;
     justify-content: center;
     color: whitesmoke;
-    
+
     .formulario {
-        background-color: rgba(173, 186, 198, .8);   
+        background-color: rgba(173, 186, 198, .8);
         padding: 50px;
+
         .tituloSimulador {
             font-size: 35px;
         }
@@ -317,6 +325,128 @@ $color-6: #eca543;
 }
 
 // Termina Página siumladorUsuario.html
+
+// Inicia Página resumen.html
+.bodyResumen {
+    background-color: whitesmoke;
+    color: whitesmoke;
+
+    display: grid;
+    grid-template-areas: "encabezado"
+        "index"
+        "footer";
+    grid-template-rows: auto 700px auto;
+}
+
+.contenidoResumen {
+    margin-top: 53px;
+    grid-area: index;
+    display: grid;
+    grid-template-areas: "menu principal";
+    grid-template-columns: 12% auto;
+
+    .menu {
+        padding-top: 100px;
+        grid-area: menu;
+        background-color: $color-6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .bot {
+            padding: 20px;
+            margin: 10px;
+            text-decoration: none;
+            color: whitesmoke;
+            &.active{
+                background-color: $color-5;
+            }
+            &:hover{
+                background-color: $color-5;
+            }
+        }
+    }
+
+    .principal {
+        grid-area: principal;
+        padding: 15px;
+        color: black;
+
+        #hola{
+            margin: 50px;
+        }
+
+        .lblDinero {
+            color: #419F18;
+            max-width: 180px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .cuenta {
+            padding: 5px;
+            margin-top: 100px;
+            border: 1px solid black;
+            width: 250px;
+            height: 125px;
+
+            .numeroCuenta {
+                height: 50px;
+                margin: 20px;
+            }
+        }
+    }
+}
+// Termina Página resumen.html
+
+// Inicia Página transferencias.html
+.bodyTransferencias {
+    background-color: whitesmoke;
+    color: whitesmoke;
+
+    display: grid;
+    grid-template-areas: "encabezado"
+        "index"
+        "footer";
+    grid-template-rows: auto 700px auto;
+}
+
+.contenidoTransferencias {
+    margin-top: 53px;
+    grid-area: index;
+    display: grid;
+    grid-template-areas: "menu principal";
+    grid-template-columns: 12% auto;
+
+    .menu {
+        padding-top: 100px;
+        grid-area: menu;
+        background-color: $color-6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .bot {
+            padding: 20px;
+            margin: 10px;
+            text-decoration: none;
+            color: whitesmoke;
+            &.active{
+                background-color: $color-5;
+            }
+            &:hover{
+                background-color: $color-5;
+            }
+        }
+    }
+
+    .principal {
+        grid-area: principal;
+        padding: 15px;
+        color: black;
+    }
+}
+// Termina Página transferencias.html
 
 // Pie de Página
 .pieDePagina {

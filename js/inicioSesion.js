@@ -28,7 +28,6 @@ btnIniciar.onclick = () => {
             if ((txtUsuario === nombre || txtUsuario === email) && pass === passUsuario) {
                 isFind = true
                 sessionStorage.setItem('usuario', nombre)
-                alert("Dinero: " + dinero)
                 sessionStorage.setItem('dineroDisponible', dinero)
                 sessionStorage.setItem('nuevoUsuario', false)
                 sessionStorage.setItem('muestraMensaje', true)

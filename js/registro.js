@@ -1,12 +1,3 @@
-
-
-Swal.fire({
-    position: 'top-end',
-    title: 'Te regalo $10,000 por ser mi cliente nuevo',
-    showConfirmButton: false,
-    timer: 3000
-  })
-
 const btnRegistrar = document.getElementById("btnRegistrar")
 
 function error(mensaje) {
@@ -29,7 +20,9 @@ btnRegistrar.onclick = () => {
     if (nombreUsuario !== "") {
         let seRepite = false
         for (const iterator of usuariosAlmacenados) {
-            const {nombre} = iterator
+            const {
+                nombre
+            } = iterator
             if (nombre === nombreUsuario) {
                 seRepite = true
                 break;
@@ -38,7 +31,9 @@ btnRegistrar.onclick = () => {
         if (emailUsuario !== "" && seRepite === false) {
             seRepite = false
             for (const iterator of usuariosAlmacenados) {
-                const {email} = iterator
+                const {
+                    email
+                } = iterator
                 if (email === emailUsuario) {
                     seRepite = true
                     break;
@@ -49,8 +44,17 @@ btnRegistrar.onclick = () => {
                     //Si todos los campos no están vacíos
                     if (passUsuario === passConfirmadoUsuario) {
                         //Inserta el dato al objeto, que se registró el usuario
-                        usuariosAlmacenados.push({nombre: nombreUsuario, email: emailUsuario, pass: passUsuario})
+                        usuariosAlmacenados.push({
+                            nombre: nombreUsuario,
+                            email: emailUsuario,
+                            pass: passUsuario,
+                            dinero: 10000
+                        })
                         localStorage.setItem("usuarios", JSON.stringify(usuariosAlmacenados))
+                        sessionStorage.setItem('usuario', nombreUsuario)
+                        sessionStorage.setItem('dineroDisponible', 10000)
+                        sessionStorage.setItem('nuevoUsuario', true)
+                        sessionStorage.setItem('muestraMensaje', true)
                         window.location.href = "../pages/resumen.html";
                     } else {
                         error("Las contraseñas no coinciden")
@@ -68,4 +72,3 @@ btnRegistrar.onclick = () => {
         error("Debe ingresar el nombre de usuario")
     }
 }
-

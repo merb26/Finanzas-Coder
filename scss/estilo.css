@@ -130,13 +130,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   color: whitesmoke;
+}
+
+.encabezado .menu #dolar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: st;
 }
 
 .encabezado .menu .botones {
@@ -173,6 +177,15 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  margin-right: 15px;
+}
+
+.encabezado .around {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-right: 15px;
 }
 
@@ -504,6 +517,52 @@
   padding: 15px;
   padding-top: 100px;
   color: black;
+}
+
+.contenidoTransferencias .principal .txtCuentaDestino {
+  min-width: 200px;
+}
+
+.contenidoTransferencias .principal .txtCuentaOrigen {
+  min-width: 200px;
+}
+
+.contenidoTransferencias .principal .lblEnviar {
+  margin-top: 40px;
+}
+
+.contenidoTransferencias .principal .lblDesdeCuenta {
+  margin-top: 5px;
+}
+
+.contenidoTransferencias .principal .lblCantidad {
+  margin-top: 20px;
+}
+
+.contenidoTransferencias .principal .form1 {
+  padding: 10px;
+}
+
+.contenidoTransferencias .principal .form1 #btnTransferir {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.contenidoTransferencias .principal .form1 #btnOtraTransferencia {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.contenidoTransferencias .principal .lblRecibo {
+  margin: 25px;
+}
+
+.contenidoTransferencias .principal table {
+  border-spacing: 25px;
+}
+
+.contenidoTransferencias .principal table tr .prueba {
+  margin: 50px;
 }
 
 .pieDePagina {

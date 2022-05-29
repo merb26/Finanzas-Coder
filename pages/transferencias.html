@@ -23,20 +23,25 @@
             <a class="bot" href="resumen.html" >Resumen</a>
             <a class="bot active">Transferencias</a>
         </div>
-        <div class="principal">
-            Llena los siguientes campos para realizar tu transferencia
-            <div class="lblEnviar">¿A quién enviaremos el dinero?</div>
-            <input type="text" placeholder="Selecciona la cuenta destino"> 
-            Agregar cuenta
-            <div class="lblDesdeCuenta">¿Desde qué cuenta?</div>
-            <input type="text" placeholder="Selecciona la cuenta origen">
-            <div class="lblCantidad">Cantidad a enviar</div>
-            <input type="text" placeholder="$0.00">
+        <div class="principal" id="principal">
+            <h3>Llena los siguientes campos para realizar tu transferencia</h3>
+            <div class="lblEnviar form1">¿A quién enviaremos el dinero?</div>
+            <input type="number" placeholder="Selecciona la cuenta destino" class="txtCuentaDestino form1" id="txtCuentaDestino"> 
+            <div id="error" class="form1" style="color: red;"></div>
+            <div class="lblDesdeCuenta form1">¿Desde qué cuenta?</div>
+            <input disabled type="text" value="********0000" class="txtCuentaOrigen form1">
+            <div class="lblCantidad form1">Cantidad a enviar</div>
+            <input type="number" placeholder="$0.00" class="form1" id="txtCantidad">
+            <div id="error2" class="form1" style="color: red;"></div>
+            <div class="boton form1">
+                <input type="button" value="Transferir" id="btnTransferir">
+            </div>
         </div>
     </div>
     <div class="pieDePagina">
         Desarrollado por: Merb
     </div>
+    <script src="../js/transferencias.js"></script>
 </body>
 
 </html>

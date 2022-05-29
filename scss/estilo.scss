@@ -123,9 +123,13 @@ $color-6: #eca543;
     .menu {
         grid-area: menu;
         display: flex;
-        justify-content: space-evenly;
         align-items: center;
         color: whitesmoke;
+        
+        #dolar {
+            display: flex;
+            justify-items: st;
+        }
 
         .botones {
             list-style: none;
@@ -158,6 +162,12 @@ $color-6: #eca543;
     .end{
         display: flex;
         justify-content: flex-end;
+        margin-right: 15px;
+    }
+
+    .around{
+        display: flex;
+        justify-content: space-around;
         margin-right: 15px;
     }
 }
@@ -445,10 +455,54 @@ $color-6: #eca543;
         padding: 15px;
         padding-top: 100px;
         color: black;
+        
+        .txtCuentaDestino {
+            min-width: 200px;
+        }
+
+        .txtCuentaOrigen {
+            min-width: 200px;
+        }
+
+        .lblEnviar {
+            margin-top: 40px;
+        }
+
+        .lblDesdeCuenta {
+            margin-top: 5px;
+        }
+
+        .lblCantidad {
+            margin-top: 20px;
+        }
+
+        .form1 {
+            padding: 10px;
+
+            #btnTransferir {
+                margin-top: 10px;
+                padding: 5px;
+            }
+            #btnOtraTransferencia {
+                margin-top: 10px;
+                padding: 5px;
+            }
+        }
+
+        .lblRecibo {
+            margin: 25px;
+        }
+
+        table {
+            border-spacing: 25px;
+        }
+
+        table tr .prueba {
+            margin: 50px;
+        }
     }
 }
 // Termina Página transferencias.html
-
 // Pie de Página
 .pieDePagina {
     display: grid;

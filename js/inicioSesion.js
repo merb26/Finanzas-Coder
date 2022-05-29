@@ -8,7 +8,7 @@ function error() {
 
 const linkLogotipo = document.getElementById("logotipo")
 linkLogotipo.onclick = () => {
-    window.location.href = "resumen.html";
+    window.location.href = "../index.html";
 }
 
 // Para iniciar sesión

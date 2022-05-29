@@ -11,7 +11,8 @@ var requestOptions = {
 fetch("https://api.apilayer.com/exchangerates_data/convert?to=mxn&from=usd&amount=1", requestOptions)
   .then(response => response.json())
   .then(result => {
-    console.log(result)
-    console.log(result.result.toFixed(2))
+    document.getElementById("dolar").innerHTML = `
+    Dólar: ${result.result.toFixed(2)} MXN
+    `
   })
   .catch(error => console.log('error', error));
